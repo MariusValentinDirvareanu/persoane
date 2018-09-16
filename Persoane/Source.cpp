@@ -44,7 +44,9 @@ int main()
 			break;
 
 		SQLCHAR retConString[1024]; // Conection string
-		switch (SQLDriverConnect(SQLConnectionHandle, NULL, (SQLCHAR*)"DRIVER={SQL Server}; SERVER=localhost, 1433; DATABASE=myDB; UID=myID; PWD=myPW;", SQL_NTS, retConString, 1024, NULL, SQL_DRIVER_NOPROMPT)) {
+		switch (SQLDriverConnect(SQLConnectionHandle, NULL, reinterpret_cast<SQLCHAR*>(
+			                         "DRIVER={SQL Server}; SERVER=localhost, 1433; DATABASE=DESKTOP-CQ5JPPO\SQLEXPRESS; UID=DESKTOP-CQ5JPPO\dirva; PWD=d*3*ecBBVodqF2z;"
+		                         ), SQL_NTS, retConString, 1024, NULL, SQL_DRIVER_NOPROMPT)) {
 		// Establishes connections to a driver and a data source
 		case SQL_SUCCESS:
 			break;
@@ -97,7 +99,7 @@ int main()
 	SQLFreeHandle(SQL_HANDLE_ENV, SQLEnvHandle);
 	// Frees the resources and disconnects
 
-	map<long, string> Persoana;
+	/*map<long, string> Persoana;
 	map<long, string>::iterator it;
 	cout << "Hello person" << '\n';
 	Persoana[1] = "Marius";
@@ -106,7 +108,7 @@ int main()
 	for(it=Persoana.begin();it!=Persoana.end();++it)
 	{
 		cout << it->second << endl;
-	}
+	}*/
 	system("PAUSE");
 	return 0;
 }
