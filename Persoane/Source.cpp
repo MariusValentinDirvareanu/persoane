@@ -22,7 +22,7 @@ int main()
 {
 	SQLHANDLE SQLEnvHandle = NULL;
 	SQLHANDLE SQLConnectionHandle = NULL;
-	SQLHANDLE SQLStatementHAndle = NULL;
+	SQLHANDLE SQLStatementHandle = NULL;
 	SQLRETURN retCode = 0;
 	char SQLQuery[] = "SELECT * FROM people";
 
